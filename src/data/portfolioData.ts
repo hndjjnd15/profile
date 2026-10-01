@@ -1,4 +1,8 @@
 import { UserProfile } from '../types';
+import portraitImg from '../assets/images/profile_portrait_professional_1790836727455.jpg';
+import fintechImg from '../assets/images/project_preview_fintech_1790836742495.jpg';
+import saasImg from '../assets/images/project_preview_saas_1790836755332.jpg';
+import mobileImg from '../assets/images/project_preview_mobile_1790836767156.jpg';
 
 export const initialProfileData: UserProfile = {
   name: "Hendi Junaidy",
@@ -14,7 +18,7 @@ export const initialProfileData: UserProfile = {
   ],
   email: "hendijunaidy@gmail.com",
   phone: "+62 812-8890-4321",
-  portraitUrl: "/src/assets/images/profile_portrait_professional_1790836727455.jpg",
+  portraitUrl: portraitImg,
   
   recruiterFacts: {
     currentStatus: "Aktif mencari peran Senior / Staff Engineer atau Tech Lead",
@@ -101,7 +105,7 @@ export const initialProfileData: UserProfile = {
       ],
       technologies: ["React", "TypeScript", "Go (Golang)", "PostgreSQL", "Redis Streams", "Docker", "Tailwind CSS"],
       year: "2024 - 2025",
-      image: "/src/assets/images/project_preview_fintech_1790836742495.jpg",
+      image: fintechImg,
       liveUrl: "https://omniflow-demo.example.com",
       githubUrl: "https://github.com/hendijunaidy/omniflow-treasury-engine",
       featured: true
@@ -121,7 +125,7 @@ export const initialProfileData: UserProfile = {
       ],
       technologies: ["TypeScript", "Next.js", "ClickHouse", "OpenTelemetry", "Node.js", "gRPC", "Tailwind CSS"],
       year: "2023 - 2024",
-      image: "/src/assets/images/project_preview_saas_1790836755332.jpg",
+      image: saasImg,
       liveUrl: "https://katalis-telemetry.example.com",
       githubUrl: "https://github.com/hendijunaidy/katalis-observability",
       featured: true
@@ -141,7 +145,7 @@ export const initialProfileData: UserProfile = {
       ],
       technologies: ["React Native", "TypeScript", "SQLite", "CRDTs", "Tailwind CSS", "Web Workers"],
       year: "2023",
-      image: "/src/assets/images/project_preview_mobile_1790836767156.jpg",
+      image: mobileImg,
       liveUrl: "https://zenith-companion.example.com",
       githubUrl: "https://github.com/hendijunaidy/zenith-focus-companion",
       featured: true
@@ -161,7 +165,7 @@ export const initialProfileData: UserProfile = {
       ],
       technologies: ["TypeScript", "React", "Rollup", "Accessibility (a11y)", "Tailwind CSS v4"],
       year: "2022 - 2025",
-      image: "/src/assets/images/project_preview_saas_1790836755332.jpg",
+      image: saasImg,
       liveUrl: "https://aura-ui.example.com",
       githubUrl: "https://github.com/hendijunaidy/aura-headless-tokens",
       featured: false

@@ -59,6 +59,39 @@ npm run preview
 
 ---
 
+## 🌐 Panduan Deploy ke GitHub Pages
+
+Proyek ini telah dikonfigurasi penuh dengan `base: './'`, `.nojekyll`, dan fallback `404.html` sehingga siap di-hosting langsung di **GitHub Pages**.
+
+### Cara 1: Otomatis via GitHub Actions (Sangat Mudah & Direkomendasikan)
+1. Push repository ini ke akun GitHub Anda:
+   ```bash
+   git add .
+   git commit -m "feat: portfolio ready for github pages"
+   git push origin main
+   ```
+2. Buka repository Anda di GitHub, lalu klik tab **Settings** ➔ **Pages**.
+3. Di bagian **Build and deployment** ➔ **Source**, pilih opsi **GitHub Actions**.
+4. GitHub Actions akan otomatis mendeteksi file `.github/workflows/deploy.yml`, melakukan build, dan mempublikasikan website Anda ke:
+   `https://<username>.github.io/<nama-repo>/`
+
+---
+
+### Cara 2: Manual via Perintah `npm run deploy`
+Jika Anda lebih suka deploy langsung dari terminal lokal menggunakan branch `gh-pages`:
+1. Pastikan remote repository git sudah terhubung:
+   ```bash
+   git remote -v
+   ```
+2. Jalankan perintah deploy:
+   ```bash
+   npm run deploy
+   ```
+   *Perintah ini otomatis menjalankan `npm run build` lalu mem-push folder `dist` ke branch `gh-pages` di GitHub.*
+3. Di menu **Settings** ➔ **Pages** pada GitHub, pastikan Source diatur ke **Deploy from a branch** dengan branch **`gh-pages`** (folder `/ (root)`).
+
+---
+
 ## 🛠️ Daftar Perintah NPM yang Tersedia
 
 | Perintah | Deskripsi |
