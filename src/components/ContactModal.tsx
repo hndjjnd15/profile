@@ -51,6 +51,19 @@ export const ContactModal: React.FC<ContactModalProps> = ({
       'success'
     );
 
+    // If local server is running, dispatch to /api/contact
+    try {
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, company, email, topic, message }),
+      }).catch(() => {
+        // standalone frontend mode
+      });
+    } catch {
+      // ignore
+    }
+
     // Also trigger mailto so recruiter has a draft in their email client if they wish
     const mailtoSubject = encodeURIComponent(`[Inquiry Perekrut - ${company || 'Peluang Karir'}] dari ${name}`);
     const mailtoBody = encodeURIComponent(`Halo Hendi,\n\nNama: ${name}\nPerusahaan: ${company}\nTopik: ${topic}\n\nPesan:\n${message}\n\nSalam,\n${name} (${email})`);
