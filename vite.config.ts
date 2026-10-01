@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: process.env.BASE_PATH || 'https://github.com/hndjjnd15/profile.git',
+    base: 'https://github.com/hndjjnd15/profile.git',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
