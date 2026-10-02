@@ -61,34 +61,38 @@ npm run preview
 
 ## 🌐 Panduan Deploy ke GitHub Pages
 
-Proyek ini telah dikonfigurasi penuh dengan `base: './'`, `.nojekyll`, dan fallback `404.html` sehingga siap di-hosting langsung di **GitHub Pages**.
+Proyek ini telah dikompilasi ke dalam folder **`docs/`** yang siap saji dengan seluruh file JavaScript (`.js`), CSS, dan gambar yang telah di-bundle.
 
-### Cara 1: Otomatis via GitHub Actions (Sangat Mudah & Direkomendasikan)
-1. Push repository ini ke akun GitHub Anda:
+### Cara 1: Menggunakan Folder `/docs` (Paling Cepat & Langsung Jalan)
+1. Push seluruh file dan folder `docs/` ke GitHub:
    ```bash
    git add .
-   git commit -m "feat: portfolio ready for github pages"
+   git commit -m "feat: publish docs for github pages"
    git push origin main
    ```
-2. Buka repository Anda di GitHub, lalu klik tab **Settings** ➔ **Pages**.
-3. Di bagian **Build and deployment** ➔ **Source**, pilih opsi **GitHub Actions**.
-4. GitHub Actions akan otomatis mendeteksi file `.github/workflows/deploy.yml`, melakukan build, dan mempublikasikan website Anda ke:
-   `https://<username>.github.io/<nama-repo>/`
+2. Buka repository Anda di GitHub: **Settings** ➔ **Pages**.
+3. Di bagian **Build and deployment**:
+   - **Source**: `Deploy from a branch`
+   - **Branch**: `main`
+   - **Folder**: Ubah dari `/ (root)` menjadi **`/docs`**
+4. Klik **Save**. Tunggu 1 menit, dan website akan langsung aktif di:
+   `https://hndjjnd15.github.io/profile/`
 
 ---
 
-### Cara 2: Manual via Perintah `npm run deploy`
-Jika Anda lebih suka deploy langsung dari terminal lokal menggunakan branch `gh-pages`:
-1. Pastikan remote repository git sudah terhubung:
-   ```bash
-   git remote -v
-   ```
-2. Jalankan perintah deploy:
+### Cara 2: Otomatis via GitHub Actions
+1. Buka repository Anda di GitHub: **Settings** ➔ **Pages**.
+2. Pada bagian **Source**, pilih opsi **GitHub Actions**.
+3. GitHub Actions otomatis mem-build dari workflow `.github/workflows/deploy.yml`.
+
+---
+
+### Cara 3: Manual via Perintah `npm run deploy`
+1. Jalankan perintah deploy di terminal:
    ```bash
    npm run deploy
    ```
-   *Perintah ini otomatis menjalankan `npm run build` lalu mem-push folder `dist` ke branch `gh-pages` di GitHub.*
-3. Di menu **Settings** ➔ **Pages** pada GitHub, pastikan Source diatur ke **Deploy from a branch** dengan branch **`gh-pages`** (folder `/ (root)`).
+2. Di GitHub **Settings** ➔ **Pages**, pilih branch **`gh-pages`** (folder `/ (root)`).
 
 ---
 

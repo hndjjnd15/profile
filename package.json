@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.io",
+  "homepage": "https://hndjjnd15.github.io/profile/",
   "name": "react-example",
   "private": true,
   "version": "0.0.0",
@@ -9,11 +9,11 @@
     "start": "vite --port=3000 --host=0.0.0.0",
     "server": "tsx server.ts",
     "dev:fullstack": "tsx server.ts",
-    "build": "vite build",
+    "build": "vite build && rm -rf docs && cp -r dist docs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "preview": "vite preview --port=3000 --host=0.0.0.0",
-    "clean": "rm -rf dist server.js",
+    "clean": "rm -rf dist docs server.js",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
